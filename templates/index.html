@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta-Analysis Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header style="position: relative;">
+        <div class="logo">META-INSIGHT</div>
+        <p>Advanced Meta-Analysis & Evidence Synthesis</p>
+        <div class="last-updated">Last updated: <span id="last-updated">—</span></div>
+        <a href="/about"
+            style="position: absolute; top: 2rem; right: 2rem; background-color: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right: 6px;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            About
+        </a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Synthesize Evidence on Disease-Exposure Relations</h1>
+            <p>Enter a disease and an exposure to automatically perform a meta-analysis from PubMed data.</p>
+
+            <div class="search-box">
+                <div class="input-group">
+                    <label for="exposure">Exposure</label>
+                    <div class="custom-dropdown" id="exposure-dropdown">
+                        <input type="text" id="exposure" placeholder="Search exposure..." value="Smoking"
+                            autocomplete="off">
+                        <div class="dropdown-options" id="exposure-options"></div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="outcome">Outcome</label>
+                    <select id="outcome">
+                        <option value="Incidence">Incidence</option>
+                        <option value="Survival">Survival</option>
+                        <option value="Disease-Free Survival">Disease-Free Survival</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="disease">Cancer</label>
+                    <select id="disease">
+                        <option value="Acute myeloid leukemia">Acute Myeloid Leukemia</option>
+                        <option value="Adrenocortical carcinoma">Adrenal Cancer</option>
+                        <option value="Cholangiocarcinoma">Bile Duct Cancer</option>
+                        <option value="Bladder urothelial carcinoma - nonpapillary">Bladder Cancer</option>
+                        <option value="Lower grade glioma">Brain Cancer (Glioma)</option>
+                        <option value="Breast Cancer">Breast Cancer</option>
+                        <option value="Cervical cancer (squamous)">Cervical Cancer</option>
+                        <option value="Colon adenocarcinoma">Colon Cancer</option>
+                        <option value="Uterine corpus (endometrial carcinoma)">Endometrial Cancer</option>
+                        <option value="Esophageal carcinoma">Esophageal Cancer</option>
+                        <option value="Uveal melanoma">Eye Cancer (Melanoma)</option>
+                        <option value="Kidney Cancer">Kidney Cancer</option>
+                        <option value="Hepatocellular carcinoma">Liver Cancer</option>
+                        <option value="Lung Cancer">Lung Cancer</option>
+                        <option value="Diffuse Large B-cell lymphoma">Lymphoma (Diffuse Large B-cell)</option>
+                        <option value="Cutaneous melanoma">Melanoma</option>
+                        <option value="Merkel cell carcinoma">Merkel Cell Carcinoma</option>
+                        <option value="Mesothelioma" selected>Mesothelioma</option>
+                        <option value="Head and neck (oral) squamous cell carcinoma">Oral Cancer</option>
+                        <option value="Ovarian serous cystadenocarcinoma">Ovarian Cancer</option>
+                        <option value="Pancreatic ductal adenocarcinoma">Pancreatic Cancer</option>
+                        <option value="Paraganglioma & pheochromocytoma">Paraganglioma</option>
+                        <option value="Prostate adenocarcinoma">Prostate Cancer</option>
+                        <option value="Rectal carcinoma">Rectal Cancer</option>
+                        <option value="Sarcoma">Sarcoma</option>
+                        <option value="Stomach adenocarcinoma">Stomach Cancer</option>
+                        <option value="Testicular germ cell cancer">Testicular Cancer</option>
+                        <option value="Thymoma">Thymus Cancer</option>
+                        <option value="Thyroid carcinoma">Thyroid Cancer</option>
+                        <option value="Uterine carcinosarcoma">Uterine Cancer (Carcinosarcoma)</option>
+                    </select>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="exclude-meta" checked>
+                    <label for="exclude-meta">Exclude Meta-Analyses</label>
+                </div>
+                <button id="analyze-btn">Analyze Evidence</button>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Scanning PubMed & Extracting Data...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-message" class="hidden"></div>
+
+        <!-- Results -->
+        <div id="results" class="hidden">
+            <section class="card">
+                <h2>Forest Plot</h2>
+                <div class="plot-container">
+                    <img id="forest-plot" src="" alt="Forest Plot will appear here">
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Extracted Studies</h2>
+                <div style="text-align: right; margin-bottom: 1rem;">
+                    <button id="update-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Update Analysis</button>
+                </div>
+                <div class="table-responsive">
+                    <table id="studies-table">
+                        <thead>
+                            <tr>
+                                <th>Include</th>
+                                <th>#</th>
+                                <th>Study</th>
+                                <th class="sortable" id="th-es" onclick="handleSort('Effect Size')">Effect Size (Raw)
+                                    <span class="sort-icon"></span></th>
+                                <th>95% CI</th>
+                                <th>Population</th>
+                                <th class="sortable" id="th-sample" onclick="handleSort('Sample Size')">Sample Size
+                                    <span class="sort-icon"></span></th>
+                                <th>Reference</th>
+                                <th class="sortable" id="th-year" onclick="handleSort('Year')">Journal / Year <span
+                                        class="sort-icon"></span></th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Meta-Analysis Result</h2>
+
+                <div id="headline-result" class="hidden"
+                    style="margin-bottom: 2rem; padding: 1.5rem; border-radius: 8px; background: rgba(160, 82, 45, 0.1); border: 1px solid rgba(160, 82, 45, 0.4);">
+                    <h3 style="margin-bottom: 0.5rem; color: #A0522D;">Pooled Effect Size</h3>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #333;">
+                        <span id="pooled-es"></span> <span
+                            style="font-size: 1.2rem; font-weight: 400; opacity: 0.8; color: #555;">(95% CI: <span
+                                id="pooled-ci"></span>)</span>
+                    </div>
+                    <div id="interpretation"
+                        style="margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
