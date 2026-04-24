@@ -3,6 +3,9 @@
 ## Overview
 This tool searches PubMed for scientific articles related to a specific disease and exposure, extracts effect sizes (OR/RR/HR) and confidence intervals, and performs a random effects meta-analysis. It also generates a forest plot.
 
+## Breast cancer meta-analysis tool
+As an initial application of this method, we examined associations between dietary exposures and breast cancer. The deployed website created by Margaux Delporte is available at https://web-production-70c49.up.railway.app/
+
 ## Setup
 1.  Ensure you have Python installed.
 2.  Install dependencies:
