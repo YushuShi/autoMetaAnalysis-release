@@ -9,7 +9,10 @@ As an initial application of this method, we examined associations between dieta
 ## Neurological disease meta-analysis tool
 Another application is on associations between dietary exposures and age-related neurological diseases. The deployed website is available at https://metaneuro-production.up.railway.app/
 
-
+![Dietary intake found to be positively associated with Parkinson's disease risk](plots/forest_harmful_parkinson.pdf).
+![Dietary intake found to be negatively associated with Parkinson's disease risk](plots/forest_protective_parkinson.pdf).
+![Dietary intake found to be positively associated with age-related cognitive decline and Alzheimer's disease](plots/forest_harmful_combined_cog_alzheimer.pdf).
+![Dietary intake found to be negatively associated with age-related cognitive decline and Alzheimer's disease](plots/forest_protective_combined_cog_alzheimer.pdf).
 ## Setup
 1.  Ensure you have Python installed.
 2.  Install dependencies:
