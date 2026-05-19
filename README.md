@@ -6,6 +6,10 @@ This tool searches PubMed for scientific articles related to a specific disease 
 ## Breast cancer meta-analysis tool
 As an initial application of this method, we examined associations between dietary exposures and breast cancer. The deployed website is available at https://web-production-70c49.up.railway.app/
 
+## Neurological disease meta-analysis tool
+Another application is on associations between dietary exposures and age-related neurological diseases. The deployed website is available at https://metaneuro-production.up.railway.app/
+
+
 ## Setup
 1.  Ensure you have Python installed.
 2.  Install dependencies:
