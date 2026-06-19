@@ -4,7 +4,7 @@
 This tool searches PubMed for scientific articles related to a specific disease and exposure, extracts effect sizes (OR/RR/HR) and confidence intervals, and performs a random effects meta-analysis. It also generates a forest plot.
 
 ## Breast cancer meta-analysis tool
-As an initial application of this method, we examined associations between dietary exposures and breast cancer. The deployed website is available at https://web-production-70c49.up.railway.app/
+As an initial application of this method, we examined associations between dietary exposures and breast/uterine/ovarian cancer. The deployed website is available at [https://web-production-70c49.up.railway.app/](https://web-production-16045.up.railway.app/)
 
 ## Neurological disease meta-analysis tool
 Another application is on associations between dietary exposures and age-related neurological diseases. The deployed website is available at https://metaneuro-production.up.railway.app/
