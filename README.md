@@ -12,7 +12,7 @@ Neurological disease meta-analysis tool: MetaNeuro
 
 MetaNeuro extends the framework to neurological and age-related neurological outcomes. The platform synthesizes evidence on nutritional exposures in relation to outcomes such as age-related cognitive decline, Alzheimer's disease, Parkinson's disease, and sleep-related outcomes. As with MetaFemina, users can inspect the underlying evidence and evaluate pooled associations across different nutritional exposures and neurological outcomes.
 
-The deployed website is available at https://metaneuro-production.up.railway.app/.
+The deployed website is available at https://metaneuro.up.railway.app/.
 
 Gastrointestinal disease meta-analysis tool: MetaGut
 
@@ -24,7 +24,7 @@ Urological disease meta-analysis tool: MetaUro
 
 MetaUro applies the framework to urological and urinary-system diseases, including urological malignancies and their major disease subtypes. The platform is designed to synthesize evidence on nutritional exposures across outcomes such as bladder, kidney, renal, and urothelial cancers and related urological conditions. Disease- and subtype-specific analyses allow evidence to be evaluated at different levels of clinical resolution rather than treating all urinary-system outcomes as a single category.
 
-MetaUro is part of the expanding platform family; its current public Railway deployment URL will be added here once the active endpoint is confirmed.
+The deployed website is available at https://metauro.up.railway.app/.
 
 Respiratory disease meta-analysis tool: MetaBreath
 
@@ -48,13 +48,7 @@ Cardiovascular disease meta-analysis tool: MetaHeart
 
 MetaHeart extends the evidence-synthesis framework to cardiovascular diseases. The planned disease scope includes major cardiovascular outcomes and clinically important subtypes, allowing nutritional exposures to be compared across cardiovascular endpoints rather than relying on a single composite definition of cardiovascular disease. The platform is also being designed to incorporate age-, sex-, and follow-up-specific baseline disease risks where suitable reference data are available.
 
-MetaHeart is currently part of the expanding collection of disease-specific applications; a current public Railway endpoint is not listed here until the deployment URL is confirmed.
-
-Prostate cancer and men's health meta-analysis tool: MetaVir
-
-MetaVir applies the framework to prostate cancer and related men's health outcomes. It is designed to evaluate nutritional exposures in relation not only to disease incidence but also, where appropriate, to clinically important disease characteristics and prognosis. This provides a complementary cancer-focused resource alongside MetaFemina and MetaUro.
-
-MetaVir is under active development, and its current public Railway deployment URL will be added once the active endpoint is confirmed.
+The deployed website is available at https://metaheart.up.railway.app/.
 
 Cross-cancer meta-analysis tool: metaOnco
 
