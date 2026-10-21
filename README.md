@@ -1,6 +1,4 @@
-Disease-specific meta-analysis tools
-
-We have extended this framework into a family of disease-specific meta-analysis platforms that systematically synthesize evidence on associations between nutritional exposures and human health outcomes. Although the individual platforms focus on different disease areas, they share a common evidence-synthesis framework, including automated literature screening and evidence extraction, study-level quality assessment, random-effects meta-analysis, forest plots, heterogeneity assessment, sensitivity analyses, and tools for interpreting pooled effect estimates. The disease-specific platforms also incorporate outcome definitions, subtypes, baseline incidence information, and analytical options tailored to each clinical domain.
+We have created a family of disease-specific meta-analysis platforms that systematically synthesize evidence on associations between nutritional exposures and human health outcomes. Although the individual platforms focus on different disease areas, they share a common evidence-synthesis framework, including automated literature screening and evidence extraction, study-level quality assessment, random-effects meta-analysis, forest plots, heterogeneity assessment, sensitivity analyses, and tools for interpreting pooled effect estimates. The disease-specific platforms also incorporate outcome definitions, subtypes, baseline incidence information, and analytical options tailored to each clinical domain.
 
 Women's cancer meta-analysis tool: MetaFemina
 
@@ -10,7 +8,7 @@ The deployed website is available at https://metafemina.up.railway.app/.
 
 Neurological disease meta-analysis tool: MetaNeuro
 
-MetaNeuro extends the framework to neurological and age-related neurological outcomes. The platform synthesizes evidence on nutritional exposures in relation to outcomes such as age-related cognitive decline, Alzheimer's disease, Parkinson's disease, and sleep-related outcomes. As with MetaFemina, users can inspect the underlying evidence and evaluate pooled associations across different nutritional exposures and neurological outcomes.
+MetaNeuro extends the framework to age-related cognitive decline, Alzheimer's disease, Parkinson's disease, and sleep-related outcomes. As with MetaFemina, users can inspect the underlying evidence and evaluate pooled associations across different nutritional exposures and neurological outcomes.
 
 The deployed website is available at https://metaneuro.up.railway.app/.
 
@@ -22,7 +20,7 @@ The deployed website is available at https://metagut.up.railway.app/.
 
 Urological disease meta-analysis tool: MetaUro
 
-MetaUro applies the framework to urological and urinary-system diseases, including urological malignancies and their major disease subtypes. The platform is designed to synthesize evidence on nutritional exposures across outcomes such as bladder, kidney, renal, and urothelial cancers and related urological conditions. Disease- and subtype-specific analyses allow evidence to be evaluated at different levels of clinical resolution rather than treating all urinary-system outcomes as a single category.
+MetaUro applies the framework to urological cancers. The platform is designed to synthesize evidence on nutritional exposures across outcomes such as bladder, kidney, renal, prostate, and urothelial cancers. Disease- and subtype-specific analyses allow evidence to be evaluated at different levels of clinical resolution.
 
 The deployed website is available at https://metauro.up.railway.app/.
 
@@ -46,7 +44,7 @@ The deployed website is available at https://metacutiscapillus.up.railway.app/.
 
 Cardiovascular disease meta-analysis tool: MetaHeart
 
-MetaHeart extends the evidence-synthesis framework to cardiovascular diseases. The planned disease scope includes major cardiovascular outcomes and clinically important subtypes, allowing nutritional exposures to be compared across cardiovascular endpoints rather than relying on a single composite definition of cardiovascular disease. The platform is also being designed to incorporate age-, sex-, and follow-up-specific baseline disease risks where suitable reference data are available.
+MetaHeart extends the evidence-synthesis framework to cardiovascular diseases. The planned disease scope includes major cardiovascular outcomes and clinically important subtypes. 
 
 The deployed website is available at https://metaheart.up.railway.app/.
 
